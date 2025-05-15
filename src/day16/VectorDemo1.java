@@ -21,7 +21,8 @@ public class VectorDemo1 {
 		System.out.println("capacity:"+v.capacity());
 		System.out.println("free:"+(v.capacity()-v.size()));
 		//空間會倍數成長 從初始10>20>40>80>160>320>640.........預設倍數成長
-		System.out.println("day16");
+
+		
 	}
 
 }
