@@ -2,6 +2,7 @@ package day18;
 
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
@@ -87,6 +88,7 @@ public class TaichungMain {
 			}
 		});
 		//有珍珠奶茶的店中 CP值最高的景點
+		
 //		String foodName1 = "珍珠奶茶";
 //		Map<String, Optional<Attraction>>  maxCpByFood=
 //		attractions.stream().collect(Collectors.groupingBy(
@@ -97,7 +99,66 @@ public class TaichungMain {
 //							Attraction attraction = optAttraction.get();
 //							System.out.println(food + " => " + attraction);
 //						}
-//					});			
-					
+//					});	
+		
+		System.out.println("----------------有珍珠奶茶的店中 CP 值最高的景點----------------");
+		String foodName1 = "珍珠奶茶";
+		Optional<Attraction> maxCpAttractionWithBubbleTea = attractions.stream()
+		    .filter(a -> a.getFoods().contains(foodName1))
+		    .max(Comparator.comparingDouble(Attraction::getCp));
+
+		if (maxCpAttractionWithBubbleTea.isPresent()) {
+		    System.out.printf("有珍珠奶茶的店中 CP 值最高的景點: %s%n", maxCpAttractionWithBubbleTea.get());
+		} else {
+		    System.out.println("沒有找到有珍珠奶茶的景點。");
+		}
+		
+		System.out.println("----------------有豆花的店中 CP 值最高的景點----------------");
+		String foodName2 = "豆花";
+		Optional<Attraction> maxCpAttractionWithDouhua = attractions.stream()
+				.filter(a->a.getFoods().contains(foodName2))
+				.max(Comparator.comparingDouble(Attraction::getCp));
+		if (maxCpAttractionWithDouhua.isPresent()) {
+			System.out.printf("有豆花的店中 CP 值最高的景點: %s%n",maxCpAttractionWithDouhua.get());	
+		}else {
+			System.out.println("沒有找到有豆花的景點。");
+		}
+		
+//		System.out.println(attractions.get(0).getFoods().get(0));
+//		System.out.println(attractions.get(0).getFoods().get(1));
+//		attractions.forEach(System.out::println);	
+		
+		System.out.println("----------------有步行可以到達的景點有哪些?");
+		String trans2 = "步行";
+		attractions.stream().filter(a-> a.gettrans().contains(trans2))
+		.forEach(a-> System.out.println(a.getName()));
+
+	
+		// 每一種食物 CP 值最高的景點
+		System.out.println("----------------每一種食物 CP 值最高的景點----------------");
+		Map<String, Optional<Attraction>> maxCpAttractionsByFood = new HashMap<>();
+
+		// 遍歷每個景點，將其食物與 CP 值存入 Map
+		for (Attraction attraction : attractions) {
+		    for (String food : attraction.getFoods()) {
+		        maxCpAttractionsByFood.putIfAbsent(food, Optional.of(attraction));
+		        maxCpAttractionsByFood.computeIfPresent(food, (k, v) -> 
+		            v.map(a -> a.getCp() > attraction.getCp() ? v : Optional.of(attraction))
+		              .orElse(Optional.of(attraction))
+		        );
+		    }
+		}
+
+		// 印出結果
+		for (Map.Entry<String, Optional<Attraction>> entry : maxCpAttractionsByFood.entrySet()) {
+		    String foodName3 = entry.getKey();
+		    Optional<Attraction> maxAttraction = entry.getValue();
+		    if (maxAttraction.isPresent()) {
+		        System.out.printf("食物: %s, CP 值最高的景點: %s%n", foodName3, maxAttraction.get());
+		    } else {
+		        System.out.printf("食物: %s, 沒有找到相關景點%n", foodName3);
+		    }
+		}
+	
 	}
 }
