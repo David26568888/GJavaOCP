@@ -1,12 +1,12 @@
-package day19;
+package day20;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
+//import lombok.EqualsAndHashCode;
+//import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+//import lombok.Setter;
+//import lombok.ToString;
 
 // lombok=get+set+equalHashcode+toString
 //Gson=https://mvnrepository.com/artifact/com.google.code.gson/gson
@@ -32,6 +32,7 @@ public class Snack {
 	private String type;  //類型
 	private Double latitude;//緯度
 	private Double longitude;//經度
-
+//----------------------------
+	private Double distance;
 
 }
