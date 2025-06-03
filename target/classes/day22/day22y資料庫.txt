@@ -1,0 +1,15 @@
+MySQL Server :3306(預設)
+SCHEMAS(資料庫)>sys(系統資料庫)
+SCHEMAS(資料庫)>mydb(自己新建的)
+
+資料表(Table)
+早期資料表 全命名都是大寫(db3)
+user_age(命名用底線，非駝峰式命名)
+-- 單行註解+空格
+' ' , " "可以混用 但實務都用單引號多
+
+每一列>row
+資料欄>column 
+自學可參考
+https://www.w3schools.com/sql/
+語法>>CREATE SCHEMA `mydb` DEFAULT CHARACTER SET utf8mb4 ;

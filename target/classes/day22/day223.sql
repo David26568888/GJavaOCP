@@ -1,0 +1,23 @@
+use mydb;
+select* from users;
+select username, gender, birthday, interests, self_intro, appearance;
+select gender,username,birthday from users order by birthday asc;-- asc (預設由小到大)
+select gender,username,birthday from users order by birthday desc;-- desc (預設由大到小)
+-- 加入臨時欄位 age
+select gender,username,birthday,timestampdiff(year,birthday,curdate()) as age from users;-- timestampdiff() 時差(year,birthday,curdate())由birthday,curdate()相減
+select gender,username,birthday,timestampdiff(year,birthday,curdate()) as age from users order by age desc;
+select gender,username,birthday,timestampdiff(year,birthday,curdate()) as age from users order by age asc ,birthday desc; 
+-- 加入臨時欄位 average_age
+select avg(timestampdiff(year,birthday,curdate())) as average_age from users;
+-- 男生平均年齡
+select avg(timestampdiff(year,birthday,curdate())) as average_age 
+from users
+where gender= 'M';
+-- 男生/女生平均年齡
+select gender,avg(timestampdiff(year,birthday,curdate())) as average_age 
+from users
+group by gender;
+-- 喜歡賽車的有誰
+select id,username, gender, birthday, interests, self_intro, appearance
+from users
+where interests like '%賽車%'; -- %XXX%>>指的是%前 有若干字 %後有若干字

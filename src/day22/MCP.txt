@@ -1,0 +1,10 @@
+AI Agent  "MCP">>Model Content Protocal(AI溝通標準化)
+https://www.ibest.com.tw/news-detail/what-is-mcp/
+
+利用Spring AI 開發MCP
+
+DM> 標準化 是透過印表機
+Web 網站> 標準化 是透過 http
+AI ChatGpt > 標準化 是透過 "MCP"
+
+以後google 瀏覽器 可能被AI ChatGpt所取代

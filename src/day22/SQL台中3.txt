@@ -1,0 +1,20 @@
+use mydb;
+select id,name,ticket_price,category,description from taichung_attractions;
+-- 1. 查詢所有「免費」的景點名稱(name)與所在區域(location)
+select name,location,category from taichung_attractions
+where ticket_price='免費';
+
+-- 2. 查詢「約會」類型的景點，並依票價由高到低排序（票價需自行轉換為數字比較）
+-- （提示：只需先查詢資料，不需排序）
+select id,name,category,ticket_price from taichung_attractions
+where category= '約會';
+
+-- 3. 查詢票價為「全票200元」以上（含）且屬於「親子」的景點名稱與說明
+
+
+-- 4. 查詢每種 category（約會/闔家/親子/朋友）各有幾個景點
+select category, count(category) as count from taichung_attractions
+group by category;-- count(*)==count(category)
+-- 5. 查詢所有景點名稱中有「公園」二字的資料
+select id,name,category,ticket_price,description from taichung_attractions
+where name like '%公園%';
