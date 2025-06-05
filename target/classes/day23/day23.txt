@@ -1,0 +1,19 @@
+day23
+同學分享雜湊值 ，針對密碼加密
+
+SQL 最高權限 root
+SQL Server 預設一個使用者可以有一個資料庫的權限， 當然，如果是sa (SQL Server 最高管理者)則有全部資料庫可純取的權限。 
+
+MySQL 本身沒有UI介面，需透過WorkBench 或其他外掛(小松鼠DBeaver(Eclipse))有UI介面
+
+JDBC <一堆與DB相關的介面
+java.sql.*
+每一個SQL都有一個特定JDBC去實現interface
+exe: MySQL>>有一個特定JDBChttps://mvnrepository.com/artifact/com.mysql/mysql-connector-j
+	MSSQL>>有一個特定JDBC(微軟去下載)
+	Oracle>>有一個特定JDBC
+	
+	
+Connection 連接
+Statement 敘述(放SQL用的)
+ResultSet 結果集合	
