@@ -1,0 +1,17 @@
+day24
+書名:為什麼男人不聽，女人不看地圖？
+//傑森創工 買材料
+//https://www.jmaker.com.tw/?gad_source=1&gad_campaignid=22339522492&gbraid=0AAAAADzjNseatDWt1zQt1DcETbMwwW6gF&gclid=CjwKCAjwr5_CBhBlEiwAzfwYuO1zUe-wVIK4XD7pX8CljOBSzBqM6iCYfnytdKW1Vym8gR3UIDaDmxoC2lIQAvD_BwE
+
+何謂執行續
+1.單工(A-B)(main)
+先執行A在執行B
+
+2.多工(A----
+	  B----	)
+同時進行
+
+
+3.多續(蘿蔔蹲>>ABABABABABAB)(JAVA來實現)(便當>一口吃肉在一口吃飯)
+(分時多工)
+(輪流執行)
