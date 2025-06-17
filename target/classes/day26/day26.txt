@@ -1,0 +1,20 @@
+day26
+
+Executor VS Thread
+Executor Service
+
+EX:
+Thread --員工
+Pool --公司
+Runnable--工作
+
+-----------------------------------
+
+循環屏障(CyclicBarrier)
+當兵在火車站的 白牌計程車(一定要接到4位才發車)
+
+台北內湖銀翼餐廳
+https://lordcat.net/archives/189
+
+林口 金湯匙
+https://pi73713.pixnet.net/blog/post/62504684
